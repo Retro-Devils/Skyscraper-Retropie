@@ -12,6 +12,23 @@ function skyscraper() {
         choice=$(dialog --backtitle "$BACKTITLE" --title "SKYSKRAPER RETROPIE V1.00" \
             --ok-label Select --cancel-label Exit-Installer \
             --menu "CHOOSE SITE TO SCRAPE FROM" 25 50 30 \
+            1 "" \
+            1 "" \
+            1 "" \
+            1 "" \
+            1 "" \
+            1 "" \
+            1 "" \
+            2>&1 > /dev/tty)
+
+        case "$choice" in
+            1) screen-scraper ;;
+            2) gamesdb   ;;
+            -) no ;;
+            *) break       ;;
+        esac
+    done
+}
 
 
 
